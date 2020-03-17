@@ -5,6 +5,23 @@
 var source = $("#card-template").html();
 var templateCard = Handlebars.compile(source);
 
+$('#genre-selector').change(function () {
+    var selectedGenre = $(this).val();
+    console.log(selectedGenre);
+    if (selectedGenre == '') {
+        $('.card').show();
+    } else {
+        $('.card').each(function() {
+            if (selectedGenre.toLowerCase() == $(this).data('genre').toLowerCase()) {
+                $(this).show();
+            } else {
+                $(this).hide();
+            }
+        });
+    }
+});
+
+
 $.ajax({
     url: 'https://flynn.boolean.careers/exercises/api/array/music',
     method: 'GET',
@@ -12,10 +29,10 @@ $.ajax({
         var music = data.response;
         for (var i = 0; i < music.length; i++) {
             var album = music[i];
-            console.log(album);
+            // console.log(album);
             var albumTemplate = {
                 author: album.author,
-                genre: album.genre,
+                albumGenre: album.genre,
                 albumImg: album.poster,
                 albumTitle: album.title,
                 albumYear: album.year

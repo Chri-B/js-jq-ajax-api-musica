@@ -19,6 +19,7 @@ body {
     margin: 0 auto;
 }
 
+/* stile header */
 header {
     height: 70px;
     width: 100%;
@@ -30,9 +31,36 @@ header img {
     padding: 5px 0;
 }
 
+/* stile selettore */
+.selector-container{
+    padding-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+
+.select-style {
+    border: 1px solid #343a40;
+    width: 200px;
+    border-radius: 3px;
+    overflow: hidden;
+}
+
+#genre-selector {
+    padding: 5px 10px;
+    width: 100%;
+    border: none;
+    background: #2fd565;
+    -webkit-appearance: none;
+    text-align: center;
+    font-weight: 600;
+    font-size: 20px;
+    color: black;
+}
+
+/* stile card */
 .card-container {
     display: flex;
-    margin-top: 100px;
+    margin-top: 20px;
     flex-wrap: wrap;
     justify-content: center;
 }
