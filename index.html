@@ -17,18 +17,21 @@
                 </div>
             </header>
             <div class="container"></div>
-            <div class="container card-container">
-                <div class="card">
-                    <div class="album-img">
-                        <img src="https://www.onstageweb.com/wp-content/uploads/2018/09/bon-jovi-new-jersey.jpg" alt="">
-                    </div>
-                    <h3>New Jersey</h3>
-                    <span>Bon Jovi</span>
-                    <span>1988</span>
-                </div>
-            </div>
+            <div class="container card-container"></div>
         </div>
 
-    <script src="js/main.js" charset="utf-8"></script>
+        <script id="card-template" type="text/x-handlebars-template">
+            <div class="card" data-genre="{{albumGenre}}">
+                <div class="album-img">
+                    <img src="{{albumImg}}" alt="{{albumTitle}}-cover">
+                </div>
+                <h3>{{albumTitle}}</h3>
+                <span>{{author}}</span>
+                <span>{{albumYear}}</span>
+            </div>
+        </script>
+
+
+        <script src="js/main.js" charset="utf-8"></script>
     </body>
 </html>
